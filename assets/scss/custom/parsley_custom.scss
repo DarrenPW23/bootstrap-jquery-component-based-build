@@ -1,0 +1,17 @@
+.parsley-errors-list {
+    &.filled {
+        // margin-top: ($grid-gutter-width / 2);
+        list-style: none;
+        text-align: left;
+        padding: 0;
+        color: $danger;
+    }
+}
+
+.parsley-error {
+    border-color: $danger!important;
+}
+
+.parsley-success {
+    border-color: $success!important;
+}

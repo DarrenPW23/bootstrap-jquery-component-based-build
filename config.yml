@@ -1,0 +1,45 @@
+# Autoprefixer will make sure your CSS works with these browsers
+COMPATIBILITY:
+  - "last 2 versions"
+  - "ie >= 9"
+
+# Gulp will reference these paths when it copies files
+PATHS:
+  # Path to dist folder
+  dist: "./dist"
+  # these paths get deleted on each build!!!
+  clean:
+    - "dist/css/*"
+    - "dist/js/*"
+    - "dist/images/*"
+  # Paths to static assets that aren't images, CSS, or JavaScript
+  assets:
+    - "assets/**/*"
+    - "!assets/{img,js,scss}/**/*"
+  img_libs:
+    - "bower_components/slick-carousel/slick/*.{jpg,png,gif}"
+  # Paths to Sass libraries, which can then be loaded with @import
+  sass_libs:
+    - "assets/scss"
+    - "bower_components/bootstrap/scss"
+  sass:
+    - "assets/scss/app.scss"
+    - "assets/scss/vendor/*.scss"
+    - "assets/scss/custom/*.scss"
+    - "assets/scss/base/*.scss"
+    - "assets/scss/components/*.scss"
+    - "assets/scss/pages/*.scss"
+  javascript_vendor:
+    - "bower_components/jquery/dist/jquery.min.js"
+    - "bower_components/slick-carousel/slick/slick.min.js"
+    - "bower_components/parsleyjs/dist/parsley.min.js"
+  javascript:
+    # Start of non-bootstrap JS
+    # Any code that needs to be run first
+    - "assets/js/app.first.js"
+    # Paths to your own project code are here
+    - "assets/js/vendor/*.js"
+    - "assets/js/components/*.js"
+    - "assets/js/pages/*.js"
+    # Any code that should be called after other stuff
+    - "assets/js/app.last.js"

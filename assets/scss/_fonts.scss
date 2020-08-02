@@ -1,0 +1,33 @@
+@mixin face($font-name, $font-file-name, $style: normal, $weight: normal) {
+    @font-face {
+        font-family: $font-name;
+        src        : url('../fonts/#{$font-file-name}.eot');
+        src        : url('../fonts/#{$font-file-name}.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/#{$font-file-name}.woff') format('woff'),
+        url('../fonts/#{$font-file-name}.woff2') format('woff2'),
+        url('../fonts/#{$font-file-name}.ttf') format('truetype'),
+        url('../fonts/#{$font-file-name}.svg##{$font-name}') format('svg');
+        font-style : $style;
+        font-weight: $weight;
+    }
+}
+
+// Include external fonts here
+@import "https://fonts.googleapis.com/css?family=Overpass:100,200,300,400,700,900&display=swap";
+// Include hosted fonts here
+@include face('Alte DIN', 'AlteDIN1451Mittelschrift');
+
+$alteDIN: 'Alte DIN', serif;
+
+.alteDIN {
+    font-family: $alteDIN !important;
+}
+
+$overpass: 'Overpass', sans-serif;
+
+.overpass {
+    font-family: $overpass !important;
+}
+
+$body-font: $overpass;
+$heading-font: $alteDIN;

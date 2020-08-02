@@ -1,0 +1,144 @@
+/* ALL HELPER CLASSES go here */
+/* Add additional helper classes at the bottom, as needed */
+
+$direction_list: left right top bottom;
+$mediaQRY_list: xs sm md lg xl;
+$types: margin padding;
+
+/* Padding & Margin & Grid-gutter */
+// margin-left-1rem
+@each $type in $types {
+    .#{$type} {
+        @for $i from 1 through 20 {
+            @each $direction in $direction_list {
+                &-#{$direction}-#{$i}rem {
+                    #{$type}-#{$direction}: #{$i}rem!important;
+                }
+
+                /* "gw" is ($grid-gutter-width / 2) */
+                &-#{$direction}-#{$i}gw {
+                    #{$type}-#{$direction}: calc(#{($grid-gutter-width / 2)} * #{$i})!important;
+                }
+
+                @each $qry in $mediaQRY_list {
+                    @include media-breakpoint-up(#{$qry}) {
+                        &-#{$direction}-#{$qry}-up-#{$i}gw {
+                            #{$type}-#{$direction}: calc(#{($grid-gutter-width / 2)} * #{$i})!important;
+                        }
+                    }
+            
+                    @include media-breakpoint-down(#{$qry}) {
+                        &-#{$direction}-#{$qry}-down-#{$i}gw {
+                            #{$type}-#{$direction}: calc(#{($grid-gutter-width / 2)} * #{$i})!important;
+                        }
+                    }
+            
+                    @include media-breakpoint-only(#{$qry}) {
+                        &-#{$direction}-#{$qry}-only-#{$i}gw {
+                            #{$type}-#{$direction}: calc(#{($grid-gutter-width / 2)} * #{$i})!important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* no padding & margins */
+.no {
+    @each $type in $types {
+        &-#{$type} {
+            #{$type}: 0!important;
+
+            @each $qry in $mediaQRY_list {
+                @include media-breakpoint-up(#{$qry}) {
+                    &-#{$qry}-up {
+                        #{$type}: 0!important;
+                    }
+                }
+        
+                @include media-breakpoint-down(#{$qry}) {
+                    &-#{$qry}-down {
+                        #{$type}: 0!important;
+                    }
+                }
+        
+                @include media-breakpoint-only(#{$qry}) {
+                    &-#{$qry}-only {
+                        #{$type}: 0!important;
+                    }
+                }
+            }
+        }
+
+        @each $direction in $direction_list {
+            &-#{$type}-#{$direction} {
+                #{$type}-#{$direction}: 0!important;
+    
+                @each $qry in $mediaQRY_list {
+                    @include media-breakpoint-up(#{$qry}) {
+                        &-#{$qry}-up {
+                            #{$type}-#{$direction}: 0!important;
+                        }
+                    }
+    
+                    @include media-breakpoint-down(#{$qry}) {
+                        &-#{$qry}-down {
+                            #{$type}-#{$direction}: 0!important;
+                        }
+                    }
+    
+                    @include media-breakpoint-only(#{$qry}) {
+                        &-#{$qry}-only {
+                            #{$type}-#{$direction}: 0!important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@for $i from 1 through 10 {
+    .border-#{$i} {
+        border-width: #{$i}px !important;
+    }
+}
+
+.absolute-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@each $qry in $mediaQRY_list {
+    .absolute-center {
+        @include media-breakpoint-up(#{$qry}) {
+            &-#{$qry}-up {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        @include media-breakpoint-down(#{$qry}) {
+            &-#{$qry}-down {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        @include media-breakpoint-only(#{$qry}) {
+            &-#{$qry}-only {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+}

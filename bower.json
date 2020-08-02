@@ -1,0 +1,24 @@
+{
+  "name": "nederburg-theme",
+  "description": "This is just a simple package.json",
+  "main": "index.js",
+  "authors": [
+    "DarrenW"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^4.5.0",
+    "jquery": "^3.4.1",
+    "parsleyjs": "^2.9.1",
+    "slick-carousel": "^1.8.1"
+  },
+  "devDependencies": {}
+}

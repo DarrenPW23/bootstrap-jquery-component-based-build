@@ -1,0 +1,49 @@
+@import "fonts";
+@import "settings.first";
+
+/* ALL needed vendor styling from bower_components */
+@import "slick.scss";
+
+/* These are all the bootstrap components to choose from */
+@import "functions";
+
+/* variables.scss in this folder overrides the bootstrap include from bower_components */
+@import "variables";
+
+@import "mixins";
+// @import "root";
+@import "reboot";
+// @import "type";
+@import "images";
+// @import "code";
+@import "grid";
+// @import "tables";
+// @import "forms";
+@import "buttons";
+// @import "transitions";
+// @import "dropdown";
+// @import "button-group";
+// @import "input-group";
+// @import "custom-forms";
+// @import "nav";
+// @import "navbar";
+// @import "card";
+// @import "breadcrumb";
+// @import "pagination";
+// @import "badge";
+// @import "jumbotron";
+// @import "alert";
+// @import "progress";
+@import "media";
+// @import "list-group";
+// @import "close";
+// @import "modal";
+// @import "tooltip";
+// @import "popover";
+// @import "carousel";
+@import "utilities";
+// @import "print";
+
+/* @import your custom SCSS here if needed to be specified explicitly */
+@import "settings.last";
+@import "ie_fixes";

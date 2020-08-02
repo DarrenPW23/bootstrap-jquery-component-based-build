@@ -1,0 +1,78 @@
+// all typography-related styling goes here...
+// MODIFY the below as needed
+
+@for $i from 1 through 6 {
+
+    h#{$i},
+    .h#{$i} {
+        // transition: .2s font-size ease;
+    }
+}
+
+p {}
+
+.p {
+    @extend .p;
+}
+
+h1 {}
+
+.h1 {
+    @extend h1;
+}
+
+h2 {}
+
+.h2 {
+    @extend h2;
+}
+
+h3 {}
+
+.h3 {
+    @extend h3;
+}
+
+h4 {}
+
+.h4 {
+    @extend h4;
+}
+
+h5 {}
+
+.h5 {
+    @extend h5;
+}
+
+h6 {}
+
+.h6 {
+    @extend h6;
+}
+
+@include media-breakpoint-up(lg) {
+    p {}
+
+    h1 {}
+
+    h2 {}
+
+    h3 {}
+
+    h4 {}
+
+    h5 {}
+
+    h6 {}
+}
+
+@for $i from 1 through 6 {
+    .lh-#{$i} {
+        line-height: #{$i} !important;
+
+        &-5 {
+            line-height: #{$i+0.5} !important;
+        }
+    }
+}

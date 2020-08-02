@@ -1,0 +1,78 @@
+/* Add all variables here that you want to use in your styling */
+
+@mixin color_palette($colors) {
+
+    @each $key,
+    $color in $palette {
+        .#{$key} {
+            &-text {
+                color: $color !important;
+
+                &-hover:hover,
+                &-offhover:not(:hover) {
+                    color: $color !important;
+                }
+            }
+
+            &-background {
+                background-color: $color !important;
+
+                &-hover:hover,
+                &-offhover:not(:hover) {
+                    background-color: $color !important;
+                }
+            }
+
+            &-border {
+                border-color: $color !important;
+
+                &-bottom {
+                    border-bottom-color: $color !important;
+                }
+
+                &-top {
+                    border-top-color: $color !important;
+                }
+
+                &-left {
+                    border-left-color: $color !important;
+                }
+
+                &-right {
+                    border-right-color: $color !important;
+                }
+            }
+        }
+
+        .btn.btn-#{$key} {
+            border-color    : $color;
+            background-color: $color;
+
+            &.active,
+            &:hover {
+                border-color: $color;
+                color       : $color;
+                background  : transparent;
+            }
+
+            &.hollow {
+                background: none;
+                color     : $color;
+
+                &.active,
+                &:hover {
+                    background-color: $color;
+                    color           : white;
+                }
+            }
+        }
+    }
+}
+
+/* Add your own colors here. The classes above will become available relative to the colors */
+$black : #000;
+$white : #FFF;
+
+$palette: (black: $black,
+    white: $white,
+);
